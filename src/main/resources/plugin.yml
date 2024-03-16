@@ -1,0 +1,37 @@
+main: delta.cion.Violet_WhiteList
+api-version: '1.19'
+name: Violet-WhiteList
+version: '${project.version}'
+description: '${project.description}'
+website: https://discord.gg/MEBkvJbe4P
+authors:
+  - Carde2
+load: STARTUP
+commands:
+  viowl:
+    description: Main command for this plugin
+permissions:
+  viowl.*:
+    default: op
+    description: All perms
+    children:
+      viowl.Reload: true
+      viowl.Help: true
+      viowl.Add: true
+      viowl.Remove: true
+      viowl.Toggle: true
+  viowl.Toggle:
+    description: Toggle whitelist
+    default: op
+  viowl.Help:
+    description: Help command
+    default: op
+  viowl.Add:
+    description: Add player to WL
+    default: op
+  viowl.Remove:
+    description: Remove player from WL
+    default: op
+  viowl.Reload:
+    description: Allow to use reload command
+    default: op

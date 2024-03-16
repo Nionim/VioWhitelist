@@ -1,0 +1,11 @@
+# use '&' to colorize msg
+# you also can use {player}
+prefix: "&5&lViolett Project\n"
+no_WL: "&4&lYou're not on the whitelist&6!\n&rNickname: &6{player}"
+
+Whitelist:
+  # enable or disable whitelist
+  enable_disable: true
+  # whitelisted players (you can delete "Carde2")
+  players:
+    - "carde2"
