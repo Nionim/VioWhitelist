@@ -32,10 +32,6 @@ public final class Violet_WhiteList extends JavaPlugin {
         Objects.requireNonNull(getCommand("viowl")).setTabCompleter(new MainCommand());
         getServer().getPluginManager().registerEvents(new LoginEvent(), this);
 
-        if (getConfig().getBoolean("enable_disable")) {
-            Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&5Status&6: &2Вайтлист включен&6!"));
-        } else {Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&5Status&6: &cВайтлист отключен!&6"));}
-
     }
 
     @Override
