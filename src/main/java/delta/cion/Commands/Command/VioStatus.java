@@ -18,7 +18,8 @@ public class VioStatus implements CmdUtil {
             if (!args[1].isEmpty()) {
                 if (args[1].equals("enable") || args[1].equals("disable")) {
                     String status = args[1];
-                    Violet_WhiteList.getInstance().getConfig().set("enable_disable", status);
+                    ConfigurationSection status1 = Violet_WhiteList.getInstance().getConfig().getConfigurationSection("Whitelist");
+                    Objects.requireNonNull(status1).set("enable_disable", status);
                     Violet_WhiteList.getInstance().saveConfig();
                     Violet_WhiteList.getInstance().reloadConfig();
                     Senders.send(sender, "&2Установлен статус вайтлиста: " + status);
