@@ -9,6 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+import static delta.cion.WhiteList.WLUtils.MSG;
+import static delta.cion.WhiteList.WLUtils.config;
+
 public class VioRemove implements CmdUtil {
     @Override
     public String Name() {
@@ -31,11 +34,11 @@ public class VioRemove implements CmdUtil {
                 playerslist.set("players", players);
                 Violet_WhiteList.getInstance().saveConfig();
                 Violet_WhiteList.getInstance().reloadConfig();
-                Senders.send(sender, "&2Игрок &r"+player+"&2 успешно удален из вайтлиста&6!");
-            } else {Senders.send(sender, "&4Игрок &r"+player+"&4 не был в вайтлисте&6!");}
+                Senders.send(sender, Objects.requireNonNull(MSG.getString("Success-remove")).replace("{player}", player));
+            } else {Senders.send(sender, Objects.requireNonNull(MSG.getString("Error-remove")).replace("{player}", player));}
 
             if (args[1] == null) {
-                Senders.send(sender, "&4Укажите ник игрока&6!");
+                Senders.send(sender, MSG.getString("Type-PName"));
             }
         } else {Senders.noPerms(sender);}
     }
