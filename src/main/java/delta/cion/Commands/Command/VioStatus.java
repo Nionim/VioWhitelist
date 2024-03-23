@@ -4,6 +4,12 @@ import delta.cion.Utils.CmdUtil;
 import delta.cion.Utils.Senders;
 import delta.cion.Violet_WhiteList;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.ConfigurationSection;
+
+import java.util.Objects;
+
+import static delta.cion.WhiteList.WLUtils.MSG;
+import static delta.cion.WhiteList.WLUtils.config;
 
 public class VioStatus implements CmdUtil {
     @Override
@@ -18,17 +24,17 @@ public class VioStatus implements CmdUtil {
             if (!args[1].isEmpty()) {
                 if (args[1].equals("enable") || args[1].equals("disable")) {
                     String status = args[1];
-                    ConfigurationSection status1 = Violet_WhiteList.getInstance().getConfig().getConfigurationSection("Whitelist");
+                    ConfigurationSection status1 = config.getConfigurationSection("Whitelist");
                     Objects.requireNonNull(status1).set("enable_disable", status);
                     Violet_WhiteList.getInstance().saveConfig();
                     Violet_WhiteList.getInstance().reloadConfig();
-                    Senders.send(sender, "&2Установлен статус вайтлиста: " + status);
+                    Senders.send(sender, MSG.getString("Status-Changed") + status);
                 } else {
-                    Senders.send(sender, "&4Укажите состояние (enable|disable)!");
+                    Senders.state(sender);
                 }
             } else {
-                Senders.send(sender, "&4Укажите состояние (enable|disable)!");
+                Senders.state(sender);
             }
-        } else {Senders.send(sender, "&4Укажите состояние (enable|disable)!");}
+        } else {Senders.state(sender);}
     }
 }
