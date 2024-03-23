@@ -26,10 +26,10 @@ public class VioHelp implements CmdUtil {
 
     public static void help(CommandSender sender) {
         info(sender, "&8>> &5/&fviowl - Main command\n\n" +
-                "&8>> &5/&fviowl help   &6— &5Помощь по плагину\n" +
-                "&8>> &5/&fviowl reload &6— &5Перезагрузка плагина\n" +
-                "&8>> &5/&fviowl status &6— &5Включить/выключить вайтлист\n" +
-                "&8>> &5/&fviowl add  &6— &5Добавить игрока в вайтлист\n" +
-                "&8>> &5/&fviowl remove  &6— &5Убрать игрока из вайтлиста");
+                     "&8>> &5/&fviowl status <enable|disable>\n" +
+                     "&8>> &5/&fviowl add <player>\n" +
+                     "&8>> &5/&fviowl remove <player>\n"+
+                     "&8>> &5/&fviowl help\n"+
+                     "&8>> &5/&fviowl reload");
     }
 }
