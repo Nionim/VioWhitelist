@@ -1,11 +1,41 @@
-# use '&' to colorize msg
-# you also can use {player}
-prefix: "&5&lViolett Project\n"
-no_WL: "&4&lYou're not on the whitelist&6!\n&rNickname: &6{player}"
+#============================================#
+#  Carde2 # You can use '&' to colorize msg  #
+#============================================#
+
+# Enable or disable whitelist
+enable_disable: enable
+
+# You can use {player} to print player name
+prefix: "&5&lViolett Project"
+no_WL: "\n&4&lYou're not on the whitelist!\n&rNickname: &6{player}"
+
+
+
+#================================#
+#  Carde2 # Whitelisted players  #
+#================================#
 
 Whitelist:
-  # enable or disable whitelist
-  enable_disable: true
   # whitelisted players (you can delete "Carde2")
   players:
     - "carde2"
+
+
+#=====================#
+#  Carde2 # Messages  #
+#=====================#
+
+Messages:
+  Error-Perms: "&4&lYou dont have permissions!"
+  Error-Cmd: "&4&lUnknown command!"
+  Error-Boolean: "&4&lSpecify the boolean! (enable|disable)"
+  Status-Changed: "&2Status has been changed to: "
+  Type-PName: "&4Specify the player's nickname!"
+  Reloaded: "&2Configuration reloaded!"
+
+
+  # You can use {player} to print player name \/
+  Success-add: "&2Player {player} has been added to the whitelist!"
+  Success-remove: "&2Player {player} has been removed from the whitelist!"
+  Error-add: "&4Player {player} was already on the whitelist!"
+  Error-remove: "&4Player {player} was not on the whitelist!"
